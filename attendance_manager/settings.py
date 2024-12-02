@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
+    "django_browser_reload",
     'compressor',
     'accounts',
     'attendances',
@@ -66,6 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'attendance_manager.urls'
@@ -73,7 +76,7 @@ ROOT_URLCONF = 'attendance_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'attendance_manager/templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,7 +91,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'attendance_manager.wsgi.application'
 
-COMPRESS_ROOT = BASE_DIR / 'attendance_manager/static'
+COMPRESS_ROOT = BASE_DIR / 'static'
 
 COMPRESS_ENABLED = True
 
@@ -164,7 +167,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'attendance_manager/static',
+    BASE_DIR / 'static',
 ]
 STATIC_ROOT = 'static_root'
 
