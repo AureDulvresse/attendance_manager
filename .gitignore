@@ -1,39 +1,55 @@
 # Système et IDE
-.vscode/                     # Dossier de configuration de VS Code
-.idea/                       # Dossier pour IntelliJ IDEA/PyCharm
-*.swp                        # Fichiers temporaires d'édition
+
+# Dossier de configuration de VS Code
+.vscode/
+# Dossier pour IntelliJ IDEA/PyCharm
+.idea
+# Fichiers temporaires d'édition           
+*.swp                   
 
 # Environnements virtuels et variables d'environnement
-env/                       # Environnement virtuel (nom commun)
-venv/                        # Environnement virtuel alternatif
-myenv/                       # Autre nom potentiel pour un environnement virtuel
-*.env                        # Fichiers de variables d'environnement
-.env.*                       # Autres fichiers .env nommés (par exemple, .env.production)
+
+# Environnement virtuel
+env/                       
+venv/                        
+myenv/                 
+# Autres fichiers .env nommés (par exemple, .env.production)      
+*.env                        
+.env.*                       
 
 # Node.js
-node_modules/                # Dépendances Node.js
+
+# Dépendances Node.js
+node_modules/                
 
 # Python
-*.pyc                        # Fichiers compilés Python
-*.pyo                        # Fichiers optimisés Python
-*.pyd                        # Fichiers compilés sous Windows
-__pycache__/                 # Caches Python
-**/__pycache__/              # Caches Python dans les sous-dossiers
-*.pylint.d                   # Cache Pylint
+
+# Fichiers compilés Python
+*.pyc                     
+# Fichiers optimisés Python   
+*.pyo                        
+# Fichiers compilés sous Windows
+*.pyd              
+ # Caches Python          
+__pycache__/       
+# Caches Python dans les sous-dossiers         
+**/__pycache__/              
+# Cache Pylint
+*.pylint.d                   
 
 # Base de données
-db.sqlite3                   # Base de données SQLite
-*.sqlite3                    # Autres fichiers SQLite
+db.sqlite3                   
+*.sqlite3                    
 
 # Logs et données temporaires
-*.log                        # Fichiers de logs
-*.pid                        # Fichiers de processus
-*.seed                       # Fichiers de données de seed
-*.bak                        # Sauvegardes
-*.tmp                        # Fichiers temporaires
+*.log                        
+*.pid                        
+*.seed                       
+*.bak                        
+*.tmp
 
 # Django spécifiques
-staticfiles/                 # Dossier généré par collectstatic
-media/                       # Fichiers médias téléchargés (s'ils ne sont pas versionnés)
-**/migrations/               # Migrations générées automatiquement
-!.gitkeep                    # Conserve les dossiers vides
+staticfiles/                 
+media/                       
+**/migrations/               
+!.gitkeep      
