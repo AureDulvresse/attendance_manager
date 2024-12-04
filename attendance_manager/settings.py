@@ -51,8 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    "django_browser_reload",
+    'django_browser_reload',
     'compressor',
     'accounts',
     'attendances',
@@ -67,8 +66,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'attendance_manager.urls'
@@ -76,7 +73,7 @@ ROOT_URLCONF = 'attendance_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'attendance_manager/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,7 +88,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'attendance_manager.wsgi.application'
 
-COMPRESS_ROOT = BASE_DIR / 'static'
+COMPRESS_ROOT = BASE_DIR / 'attendance_manager/static'
 
 COMPRESS_ENABLED = True
 
@@ -103,21 +100,21 @@ STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-     "default": {
-        "ENGINE" : "django.db.backends.mysql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASS"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT"),
-        "OPTIONS": {
-            "charset": "utf8mb4",
-        },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    #  "default": {
+    #     "ENGINE" : "django.db.backends.mysql",
+    #     "NAME": os.getenv("DB_NAME"),
+    #     "USER": os.getenv("DB_USER"),
+    #     "PASSWORD": os.getenv("DB_PASS"),
+    #     "HOST": os.getenv("DB_HOST"),
+    #     "PORT": os.getenv("DB_PORT"),
+    #     "OPTIONS": {
+    #         "charset": "utf8mb4",
+    #     },
+    # }
 }
 
 # DATABASES = {
@@ -167,7 +164,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'attendance_manager/static',
 ]
 STATIC_ROOT = 'static_root'
 
