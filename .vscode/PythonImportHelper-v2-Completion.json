@@ -738,7 +738,7 @@
         "kind": 5,
         "importPath": "attendance_manager.urls",
         "description": "attendance_manager.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n  path('employee/', include('employee.urls')),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('accounts/', include('accounts.urls')),\n    path('', include('employee.urls')),\n    path(\"__reload__/\", include(\"django_browser_reload.urls\")),\n]",
         "detail": "attendance_manager.urls",
         "documentation": {}
     },
