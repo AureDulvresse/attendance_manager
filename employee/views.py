@@ -3,6 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 def dashboard(request):
 
-   context = [];
+   context = {
+      'title': 'Dashboard'
+   };
 
-   return render(request, 'employee/dashboard', context)
+   return render(request, 'employee/dashboard.html', context)

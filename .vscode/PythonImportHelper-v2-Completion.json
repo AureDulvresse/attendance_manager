@@ -837,7 +837,7 @@
         "kind": 2,
         "importPath": "employee.views",
         "description": "employee.views",
-        "peekOfCode": "def dashboard(request):\n   context = [];\n   return render(request, 'employee/dashboard', context)",
+        "peekOfCode": "def dashboard(request):\n   context = {\n      'title': 'Dashboard'\n   };\n   return render(request, 'employee/dashboard.html', context)",
         "detail": "employee.views",
         "documentation": {}
     },
