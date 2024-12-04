@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import register_new_employee
+
 from .register_employee import *
 from .register_site import *
 from .register_team import *
