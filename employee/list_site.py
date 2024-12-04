@@ -6,5 +6,5 @@ from django.db import transaction
 from django.shortcuts import render, get_object_or_404, redirect
 
 @login_required
-def register_new_employee(request):
-    return render(request , 'register/register_new_employee.html') 
+def list_site(request):
+    return render(request , 'list/list_site.html') 
