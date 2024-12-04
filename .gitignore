@@ -4,7 +4,7 @@
 *.swp                        # Fichiers temporaires d'édition
 
 # Environnements virtuels et variables d'environnement
-env/                         # Environnement virtuel (nom commun)
+env/                       # Environnement virtuel (nom commun)
 venv/                        # Environnement virtuel alternatif
 myenv/                       # Autre nom potentiel pour un environnement virtuel
 *.env                        # Fichiers de variables d'environnement
