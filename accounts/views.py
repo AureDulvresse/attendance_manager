@@ -22,7 +22,9 @@ def login(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                print('Deconnecté')
+                # Connexion de l'utilisateur
+                auth_login(request, user)
+                # Rediriger vers la page d'accueil ou une page protégée
                 return redirect('home')  # Remplacez 'home' par l'URL de la page de redirection souhaitée
             else:
                 # hjgsgfhg
@@ -32,7 +34,7 @@ def login(request):
         form = AuthenticationForm()
 
     return render(request, 'accounts/login.html', {'form': form})
-    # return render(request, 'accounts/login.html')
+    return render(request, 'accounts/login.html')
 
 def logout(request):
     # Déconnecter l'utilisateur
