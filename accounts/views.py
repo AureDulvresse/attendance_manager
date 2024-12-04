@@ -22,7 +22,9 @@ def login(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                print('Deconnecté')
+                # Connexion de l'utilisateur
+                auth_login(request, user)
+                # Rediriger vers la page d'accueil ou une page protégée
                 return redirect('home')  # Remplacez 'home' par l'URL de la page de redirection souhaitée
             else:
                 # Si l'utilisateur n'est pas trouvé ou les informations sont incorrectes
