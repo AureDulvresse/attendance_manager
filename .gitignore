@@ -53,3 +53,6 @@ staticfiles/
 media/                       
 **/migrations/               
 !.gitkeep      
+accounts/__pycache__/views.cpython-312.pyc
+.gitignore
+accounts/__pycache__/views.cpython-312.pyc
