@@ -1,32 +1,49 @@
-{% extends "login.html" %} {% load static %} {% block styles %}
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
+{% extends "login.html" %}
+{% load static %}
 
+{% block styles %}
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-  integrity="..."
-  crossorigin="anonymous"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-  integrity="..."
+  integrity="sha384-...your-integrity-key..."
   crossorigin="anonymous"
 />
 <style>
   .forget a {
     display: flex;
-    align-items: end;
-    justify-content: end;
+    align-items: flex-end;
+    justify-content: flex-end;
     margin-top: 10px;
     color: black;
     text-decoration: underline;
   }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .error-box {
+    color: white;
+    background-color: #ff6f6f;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .input-field.error input {
+    border-color: red;
+  }
+
+  .input-field.error i {
+    color: red;
+  }
 </style>
-{% endblock styles %} {% block content %}
+{% endblock styles %}
+
+{% block content %}
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
@@ -36,30 +53,61 @@
         method="POST"
       >
         {% csrf_token %}
-        <h2 class="title">Connectez vous !</h2>
+        <h2 class="title">Connectez-vous !</h2>
 
-        {% if form.errors %}
-        <div class="">
-          <p>{{form.errors}}</p>
+        <!-- Erreurs générales -->
+        {% if form.non_field_errors %}
+        <div class="error-box alert">
+          <p>{{ form.non_field_errors }}</p>
         </div>
         {% endif %}
-        <div class="input-field">
+
+        <!-- Champ Username -->
+        
+        <div class="input-field {% if form.username.errors %}error{% endif %}">
           <i class="fas fa-user"></i>
-          <input type="text" name="username" placeholder="Username" />
+          <input
+            type="text"
+            name="username"
+            placeholder="Nom utilisateur"
+            required
+            value="{{ form.username.value|default:'' }}"
+          />
+          {% if form.username.errors %}
+          <div class="error-message">
+            {{ form.username.errors.0 }}
+          </div>
+          {% endif %}
         </div>
-        <div class="input-field">
+      
+
+        <!-- Champ Password -->
+        
+        <div class="input-field {% if form.password.errors %}error{% endif %}">
           <i class="fas fa-lock"></i>
-          <input type="password" name="password" placeholder="Password" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Votre mot de passe"
+            required
+          />
+          {% if form.password.errors %}
+          <div class="error-message">
+            {{ form.password.errors.0 }}
+          </div>
+          {% endif %}
         </div>
+    
+
         <div class="forget">
-          <a href="{% url 'accounts:forgot_password' %}"
-            >Mots de passe oublié?</a
-          >
+          <a href="{% url 'accounts:forgot_password' %}">Mot de passe oublié ?</a>
         </div>
+
         <input type="submit" value="Connexion" class="btn solid" />
       </form>
     </div>
   </div>
+
   <div class="panels-container bg-success">
     <div class="panel left-panel">
       <div class="content">
@@ -71,10 +119,18 @@
           Connectez-vous pour optimiser vos processus et favoriser l'efficacité
           au travail !
         </h5>
-        <!-- <button class="btn transparent" id="sign-up-btn">Cliquez ici</button> -->
       </div>
     </div>
   </div>
 </div>
+<script>
+    const alert = document.querySelector('.alert');
+ 
 
+ console.log(alert)
+ setTimeout(() => {
+     alert.style.display = 'none';
+     console.log("disparait")
+ }, 4000);
+</script>
 {% endblock content %}
