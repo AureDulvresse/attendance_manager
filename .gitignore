@@ -38,8 +38,8 @@ __pycache__/
 *.pylint.d                   
 
 # Base de données
-db.sqlite3
 *.sqlite3
+db.sqlite3
 
 # Logs et données temporaires
 *.log                        
