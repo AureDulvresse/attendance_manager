@@ -1,3 +1,68 @@
+<<<<<<< HEAD
+{% extends "login.html" %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="..." crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="..." crossorigin="anonymous" />
+<style>
+  .forget a{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+  }
+</style>
+{% endblock styles %}
+{% block content %}
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="" class="sign-in-form">
+        <h2 class="title">Connectez vous svp !</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" />
+        </div>
+        <div class="forget">
+          
+          <a href="">Mots de passe oublié?</a>
+        </div>
+        <input type="submit" value="Connexion" class="btn solid" />
+
+      
+      </form>
+     
+
+
+    </div>
+  </div>
+  <div class="panels-container bg-success">
+
+    <div class="panel left-panel">
+        <div class="content">
+            <h2>Bienvenue sur l'application M4Concept</h2>
+            <h5>Simplifiez la gestion de vos employés grâce à une plateforme centralisée pour l'enregistrement des employés, les absences, et le suivi. <br>
+               Connectez-vous pour optimiser vos processus et favoriser l'efficacité au travail !</h5>
+            <!-- <button class="btn transparent" id="sign-up-btn">Cliquez ici</button> -->
+        </div>
+      
+    </div>
+
+ 
+  </div>
+</div>
+
+{% endblock content %}
+=======
 {% extends "base.html" %} {% block content %}
 <h1 class="text-3xl text-green-800">Django + Tailwind CSS + Flowbite</h1>
 {% endblock content %}
+>>>>>>> cd30a83bbf6a4d711871a95038f7b3a192c65e28
