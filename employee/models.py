@@ -1,6 +1,6 @@
 from django.db import models
+from django.conf import settings
 
-from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class Site(models.Model):
     name = models.CharField(max_length=255)
@@ -11,10 +11,6 @@ class Team(models.Model):
     name = models.CharField(max_length=255)
     site = models.ForeignKey(Site, on_delete=models.CASCADE, related_name="teams")
 
-
-
-from django.db import models
-from django.conf import settings
 
 class Employee(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="employee_profile")
@@ -62,11 +58,3 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.user.get_full_name() or self.user.username
-
-
-
-class Attendance(models.Model):
-    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name="attendances")
-    date = models.DateField(auto_now_add=True)
-    status = models.CharField(max_length=20, choices=[('present', 'Present'), ('absent', 'Absent'), ('late', 'Late')])
-    remarks = models.TextField(null=True, blank=True)

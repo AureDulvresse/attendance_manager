@@ -27,7 +27,6 @@ def login(request):
                 # Rediriger vers la page d'accueil ou une page protégée
                 return redirect('home')  # Remplacez 'home' par l'URL de la page de redirection souhaitée
             else:
-                # hjgsgfhg
                 # Si l'utilisateur n'est pas trouvé ou les informations sont incorrectes
                 form.add_error(None, 'Identifiants invalides')
     else:
