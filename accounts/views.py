@@ -34,7 +34,6 @@ def login(request):
         form = AuthenticationForm()
 
     return render(request, 'accounts/login.html', {'form': form})
-    return render(request, 'accounts/login.html')
 
 def logout(request):
     # Déconnecter l'utilisateur
