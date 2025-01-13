@@ -57,19 +57,20 @@
 
         <!-- Erreurs générales -->
         {% if form.non_field_errors %}
-        <div class="error-box">
+        <div class="error-box alert">
           <p>{{ form.non_field_errors }}</p>
         </div>
         {% endif %}
 
         <!-- Champ Username -->
-         <div class="">
+        
         <div class="input-field {% if form.username.errors %}error{% endif %}">
           <i class="fas fa-user"></i>
           <input
             type="text"
             name="username"
-            placeholder="Username"
+            placeholder="Nom utilisateur"
+            required
             value="{{ form.username.value|default:'' }}"
           />
           {% if form.username.errors %}
@@ -78,16 +79,17 @@
           </div>
           {% endif %}
         </div>
-      </div>
+      
 
         <!-- Champ Password -->
-         <div class="">
+        
         <div class="input-field {% if form.password.errors %}error{% endif %}">
           <i class="fas fa-lock"></i>
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Votre mot de passe"
+            required
           />
           {% if form.password.errors %}
           <div class="error-message">
@@ -95,7 +97,7 @@
           </div>
           {% endif %}
         </div>
-      </div>
+    
 
         <div class="forget">
           <a href="{% url 'accounts:forgot_password' %}">Mot de passe oublié ?</a>
@@ -121,4 +123,14 @@
     </div>
   </div>
 </div>
+<script>
+    const alert = document.querySelector('.alert');
+ 
+
+ console.log(alert)
+ setTimeout(() => {
+     alert.style.display = 'none';
+     console.log("disparait")
+ }, 4000);
+</script>
 {% endblock content %}
